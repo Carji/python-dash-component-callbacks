@@ -1,6 +1,6 @@
 import dash
 import dash_core_components as dcc
-import dash_html_components as html
+from dash import html
 from dash_html_components import Label
 from pandas.io.formats import style
 import plotly.express as px
@@ -42,8 +42,8 @@ app.layout = html.Div(
                             options=[
                                 {"label": y, "value": y}
                                 for y in range(
-                                    int(df.Schooling.min()), int(
-                                        df.Schooling.max()) + 1
+                                    int(df.Schooling.min()),
+                                    int(df.Schooling.max()) + 1
                                 )
                             ],
                             className="dropdown",
